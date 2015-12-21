@@ -4,7 +4,7 @@ export DIRNAME := $(strip $(shell dirname $(abspath $(lastword $(MAKEFILE_LIST))
 export PATH := $(DIRNAME)/node_modules/.bin:$(PATH)
 export SHELL := /bin/bash
 
-.PHONY: build clean
+.PHONY: build clean major minor patch publish
 
 build: clean
 	webpack --bail --progress $(DIRNAME)/src/index.js $(DIRNAME)/lib/index.js
@@ -12,3 +12,15 @@ build: clean
 clean:
 	rm -rf $(DIRNAME)/packages/*/lib/
 	rm -rf $(DIRNAME)/packages/*/npm-debug*
+
+major:
+	npm version major && make publish
+
+minor:
+	npm version minor && make publish
+
+patch:
+	npm version patch && make publish
+
+publish: build
+	publish-please && git push && git push --tags
