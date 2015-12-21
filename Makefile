@@ -10,8 +10,8 @@ build: clean
 	npm install && webpack --bail --progress $(DIRNAME)/src/index.js $(DIRNAME)/lib/index.js
 
 clean:
-	rm -rf $(DIRNAME)/packages/*/lib/
-	rm -rf $(DIRNAME)/packages/*/npm-debug*
+	rm -rf $(DIRNAME)/lib/
+	rm -rf $(DIRNAME)/npm-debug.log
 
 major:
 	npm version major && make publish
