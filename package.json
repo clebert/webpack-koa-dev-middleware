@@ -12,7 +12,7 @@
   ],
   "license": "MIT",
   "main": "lib/index.js",
-  "repository": "https://github.com/clebert/koa-middlewares/tree/master/packages/webpack-koa-dev-middleware",
+  "repository": "https://github.com/clebert/webpack-koa-dev-middleware",
   "dependencies": {
     "webpack-dev-middleware": "latest"
   },
