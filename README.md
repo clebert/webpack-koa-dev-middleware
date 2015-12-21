@@ -17,7 +17,7 @@ npm install --save-dev webpack-koa-dev-middleware
 
 For more information, see [here](https://github.com/webpack/webpack-dev-middleware/blob/master/README.md).
 
-```sh
+```js
 const createDevMiddleware = require('webpack-koa-dev-middleware')
 
 // ...
