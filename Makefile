@@ -7,7 +7,7 @@ export SHELL := /bin/bash
 .PHONY: build clean major minor patch publish
 
 build: clean
-	webpack --bail --progress $(DIRNAME)/src/index.js $(DIRNAME)/lib/index.js
+	npm install && webpack --bail --progress $(DIRNAME)/src/index.js $(DIRNAME)/lib/index.js
 
 clean:
 	rm -rf $(DIRNAME)/packages/*/lib/
