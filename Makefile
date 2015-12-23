@@ -3,13 +3,13 @@ MAKEFLAGS = -j1
 PATH := ./node_modules/.bin:$(PATH)
 SHELL := /bin/bash
 
-.PHONY: clean build major minor patch publish test
-
-clean:
-	rm -rf ./lib/
+.PHONY: build clean major minor patch publish test
 
 build:
 	make clean && webpack --progress
+
+clean:
+	rm -rf ./lib/
 
 major:
 	npm version major && make publish
