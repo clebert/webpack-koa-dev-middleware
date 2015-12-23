@@ -9,7 +9,7 @@ clean:
 	rm -rf ./lib/
 
 build:
-	webpack --progress
+	make clean && webpack --progress
 
 major:
 	npm version major && make publish
@@ -20,8 +20,8 @@ minor:
 patch:
 	npm version patch && make publish
 
-publish: test
-	make clean && make build && publish-please && git push && git push --tags
+publish:
+	make test && make build && publish-please && git push && git push --tags
 
 test:
 	[ -f ./test/index.js ] && export NODE_ENV=test && make build && node ./lib/test.js || echo 'no tests found'
