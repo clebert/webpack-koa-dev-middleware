@@ -1,7 +1,7 @@
 {
   "name": "webpack-koa-dev-middleware",
   "description": "A Koa wrapper for webpack-dev-middleware",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "engines": {
     "node": ">=5.0.0"
   },
