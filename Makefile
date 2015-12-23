@@ -20,12 +20,8 @@ minor:
 patch:
 	npm version patch && make publish
 
-publish:
-	make clean && make build && make test && publish-please && git push && git push --tags
+publish: test
+	make clean && make build && publish-please && git push && git push --tags
 
 test:
-	if [ -f ./test/index.js ] ; then \
-		export NODE_ENV=test && make build && node ./lib/test.js ; \
-	else \
-		make build ; \
-	fi
+	[ -f ./test/index.js ] && export NODE_ENV=test && make build && node ./lib/test.js || echo 'no tests found'
