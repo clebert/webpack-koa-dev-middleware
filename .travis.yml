@@ -1,5 +1,8 @@
 before_script:
   - npm prune
+branches:
+  only:
+    - master
 cache:
   directories:
     - node_modules
