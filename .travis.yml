@@ -8,5 +8,5 @@ notifications:
   email: false
 node_js:
   - '5'
-script: make build
+script: make test
 sudo: false

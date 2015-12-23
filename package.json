@@ -32,6 +32,7 @@
     "eslint-loader": "latest",
     "eslint-plugin-standard": "latest",
     "publish-please": "latest",
+    "source-map-support": "latest",
     "webpack": "latest"
   }
 }
