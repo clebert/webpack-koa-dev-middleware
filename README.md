@@ -17,6 +17,8 @@ npm install webpack-koa-dev-middleware
 
 For more information, see [here](https://github.com/webpack/webpack-dev-middleware/blob/master/README.md).
 
+### Koa 1.x
+
 ```js
 const createDevMiddleware = require('webpack-koa-dev-middleware')
 
@@ -26,4 +28,18 @@ app.use(createDevMiddleware(compiler, {
   noInfo: true,
   publicPath: '/'
 }))
+```
+
+### Koa 2.x
+
+```js
+const convert = require('koa-convert')
+const createDevMiddleware = require('webpack-koa-dev-middleware')
+
+// ...
+
+app.use(convert(createDevMiddleware(compiler, {
+  noInfo: true,
+  publicPath: '/'
+})))
 ```
