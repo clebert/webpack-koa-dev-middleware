@@ -3,7 +3,7 @@ MAKEFLAGS = -j1
 PATH := ./node_modules/.bin:$(PATH)
 SHELL := /bin/bash
 
-.PHONY: build clean major minor patch publish test
+.PHONY: build clean major minor patch publish test upgrade
 
 build:
 	make clean && webpack --progress
@@ -25,3 +25,6 @@ publish:
 
 test:
 	[ -f ./test/index.js ] && export NODE_ENV=test && make build && node ./lib/test.js || echo 'no tests found'
+
+upgrade:
+	ncu --upgradeAll
